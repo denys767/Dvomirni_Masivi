@@ -1,0 +1,89 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+// Функція для створення масивів заданих розмірностей і заповнення їх числами
+std::vector<std::vector<int>>* createArrays(const std::vector<int>* dimensions) {
+    auto* arrays = new std::vector<std::vector<int>>();
+    for (int size : *dimensions) {
+        std::vector<int> array(size);
+        for (int i = 0; i < size; ++i) {
+            array[i] = i + 1;  // Наповнення масиву числами (1, 2, 3, ...)
+        }
+        arrays->push_back(array);
+    }
+    return arrays;
+}
+
+// Функція для обчислення суми елементів у кожному масиві
+std::vector<int>* calculateSums(const std::vector<std::vector<int>>* arrays) {
+    auto* sums = new std::vector<int>();
+    for (const auto& array : *arrays) {
+        int sum = std::accumulate(array.begin(), array.end(), 0);
+        sums->push_back(sum);
+    }
+    return sums;
+}
+
+// Функція для знаходження індексів двох масивів з найменшими сумами
+std::vector<int>* findMinSumIndices(const std::vector<int>* sums) {
+    auto* indices = new std::vector<int>(sums->size());
+    std::iota(indices->begin(), indices->end(), 0);  // Заповнюємо індекси (0, 1, 2, ...)
+
+    // Сортуємо індекси за сумами масивів
+    std::sort(indices->begin(), indices->end(), [sums](int a, int b) {
+        return (*sums)[a] < (*sums)[b];
+    });
+
+    // Повертаємо індекси двох масивів з найменшою сумою
+    return new std::vector<int>{(*indices)[0], (*indices)[1]};
+}
+
+// Функція для видалення масивів за індексами
+void deleteArraysByIndices(std::vector<std::vector<int>>* arrays, const std::vector<int>* indicesToDelete) {
+    // Сортуємо індекси у спадному порядку, щоб не зміщати при видаленні
+    auto sortedIndices = *indicesToDelete;
+    std::sort(sortedIndices.rbegin(), sortedIndices.rend());
+
+    for (int index : sortedIndices) {
+        arrays->erase(arrays->begin() + index);
+    }
+    }
+
+
+// Функція для виведення масивів
+void printArrays(const std::vector<std::vector<int>>* arrays) {
+    for (const auto& array : *arrays) {
+        for (int num : array) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+
+int main() {
+    // Масив розмірностей для одномірних масивів
+    std::vector<int> dimensions = {5, 3, 7, 2, 4};
+
+    // Створюємо масиви та заповнюємо їх числами
+    auto arrays = createArrays(&dimensions);
+
+    std::cout << "Початкові масиви:" << std::endl;
+    printArrays(arrays);
+
+    // Обчислюємо суму кожного масиву
+    auto sums = calculateSums(arrays);
+
+    // Знаходимо індекси двох масивів з найменшою сумою
+    auto minSumIndices = findMinSumIndices(sums);
+
+    // Видаляємо масиви з найменшою сумою
+    deleteArraysByIndices(arrays, minSumIndices);
+
+    std::cout << "\nМасиви після видалення двох масивів з найменшою сумою:" << std::endl;
+    printArrays(arrays);
+
+    return 0;
+}

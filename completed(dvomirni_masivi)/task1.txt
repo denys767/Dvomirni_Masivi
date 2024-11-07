@@ -1,0 +1,57 @@
+/*Завдання 1
+Написати функцію, що додає рядок двовимірному масиву в кінець.
+*/
+
+#include <iostream>
+
+void addRow(int **&matrix, int &rows, int *newRow) {
+    // Створюємо новий масив для матриці з додатковим рядком
+    int** newMatrix = new int*[rows + 1];
+
+    // Копіюємо старий масив у новий
+    for (int i = 0; i < rows; ++i) {
+        newMatrix[i] = matrix[i];
+    }
+
+    // Додаємо новий рядок
+    newMatrix[rows] = newRow;
+
+    // Звільняємо старий масив і оновлюємо вказівник
+    delete[] matrix;
+    matrix = newMatrix;
+
+    // Збільшуємо кількість рядків
+    ++rows;
+}
+
+int main() {
+    int rows = 2;
+    int cols = 3;
+
+    // Ініціалізація матриці
+    int** matrix = new int*[rows];
+    matrix[0] = new int[cols]{1, 2, 3};
+    matrix[1] = new int[cols]{4, 5, 6};
+
+    // Створюємо новий рядок
+    int* newRow = new int[cols]{7, 8, 9};
+
+    addRow(matrix, rows, newRow);
+
+    // Виводимо матрицю
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    // Звільняємо пам'ять
+    for (int i = 0; i < rows; ++i) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
+
+    return 0;
+}
+
