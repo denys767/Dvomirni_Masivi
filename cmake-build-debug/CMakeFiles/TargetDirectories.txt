@@ -1,0 +1,3 @@
+C:/Users/kdeni/OneDrive - Kyiv School of Economics/Development/KSE_SP/Dvomirni-Masivi/cmake-build-debug/CMakeFiles/Dvomirni_Masivi.dir
+C:/Users/kdeni/OneDrive - Kyiv School of Economics/Development/KSE_SP/Dvomirni-Masivi/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kdeni/OneDrive - Kyiv School of Economics/Development/KSE_SP/Dvomirni-Masivi/cmake-build-debug/CMakeFiles/rebuild_cache.dir

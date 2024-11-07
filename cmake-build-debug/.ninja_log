@@ -1,0 +1,18 @@
+# ninja log v6
+258	316	7525426136421848	Dvomirni_Masivi.exe	fc68816237d5a6fc
+5	258	7525426133884861	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+6	317	7526978218320658	build.ninja	c517f1cd1cd81447
+4	488	7526978218547856	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+489	634	7526978223405600	Dvomirni_Masivi.exe	fc68816237d5a6fc
+4	386	7526978372855816	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+387	453	7526978376679834	Dvomirni_Masivi.exe	fc68816237d5a6fc
+4	396	7526997805468343	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+396	469	7526997809396736	Dvomirni_Masivi.exe	fc68816237d5a6fc
+3	513	7527003040720024	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+514	591	7527003045834010	Dvomirni_Masivi.exe	fc68816237d5a6fc
+5	531	7527013159166085	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+532	624	7527013164437010	Dvomirni_Masivi.exe	fc68816237d5a6fc
+4	486	7527013914370085	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+487	563	7527013919196539	Dvomirni_Masivi.exe	fc68816237d5a6fc
+5	279	7527034548509197	CMakeFiles/Dvomirni_Masivi.dir/main.cpp.obj	7c46959f4fcc208a
+279	340	7527034551253536	Dvomirni_Masivi.exe	fc68816237d5a6fc
